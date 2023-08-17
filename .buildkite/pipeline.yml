@@ -1,6 +1,6 @@
 steps:
   - label: ":hammer: Build"
-    command: "npm install && npm test"
+    command: scripts\build.bat
     key: build
 
   - label: ":smile: Waiting"
