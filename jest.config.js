@@ -6,6 +6,7 @@ module.exports = {
      collectCoverage: false,
      // --reporters=jest-junit
     "reporters": [
+       'default',
        'buildkite-test-collector/jest/reporter'
     ],
 
