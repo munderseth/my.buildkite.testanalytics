@@ -6,9 +6,7 @@ module.exports = {
      collectCoverage: false,
      // --reporters=jest-junit
     "reporters": [
-        "default",
-        "jest-junit",
-        'buildkite-test-collector/jest/reporter'
+       'buildkite-test-collector/jest/reporter'
     ],
 
     // Enable column + line capture for Test Analytics

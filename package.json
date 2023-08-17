@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Sandbox for pushing test results",
   "scripts": {
-    "test": "jest --forceExit"
+    "test": "jest"
   },
   "keywords": [
     "jest",
