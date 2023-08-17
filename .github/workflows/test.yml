@@ -1,0 +1,24 @@
+name: Test
+on:
+  workflow_dispatch:
+    inputs:
+      TEST_EXPECT:
+        default: 1
+env:
+  BUILDKITE_ANALYTICS_TOKEN: ${{secrets.BUILDKITE_ANALYTICS_TOKEN}}
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+      - name: Package Install
+        run: npm install
+      - uses: testspace-com/setup-testspace@v1
+        with:
+          domain: ${{github.repository_owner}}
+      - run: npm run test
+      - name: Push result to Testspace server
+        run: |
+          testspace junit.xml{tests}
+        if: always()
