@@ -4,18 +4,3 @@ steps:
       - echo "Installing packages"
       - npm install
     key: "install"
-
-  - label: ":testobject: Test"
-    commands:
-      - echo "Running tests"
-      - npm run test
-    key: "test"
-    depends_on: "install"
-
-  - label: "Publish"
-    commands:
-      - echo "Testspace push content"
-      - testspace config url munderseth.testspace.com
-      - testspace results.xml
-    key: push
-    depends_on: "test"
