@@ -6,6 +6,7 @@ on:
         default: 1
 env:
   TEST_EXPECT: ${{ github.event.inputs.expect }}
+  BUILDKITE_ANALYTICS_TOKEN: ${{ secrets.BUILDKITE_ANALYTICS_TOKEN }}
 jobs:
   test:
     runs-on: ubuntu-latest
