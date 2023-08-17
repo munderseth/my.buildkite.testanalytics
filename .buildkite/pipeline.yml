@@ -2,7 +2,3 @@ steps:
   - label: ":hammer: Build"
     command: scripts\build.bat
     key: build
-
-  - label: ":smile: Waiting"
-    command: echo "Waiting still"
-    depends_on: build
