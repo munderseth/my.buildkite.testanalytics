@@ -1,4 +1,4 @@
 steps:
   - label: ":hammer: Build"
-    command: scripts\build.bat
-    key: build
+    command: scripts\test.bat
+    key: test
