@@ -2,10 +2,11 @@ name: Test
 on:
   workflow_dispatch:
     inputs:
-      TEST_EXPECT:
+      expect:
         default: 1
 env:
   BUILDKITE_ANALYTICS_TOKEN: ${{secrets.BUILDKITE_ANALYTICS_TOKEN}}
+  TEST_EXPECT: ${{ github.event.inputs.expect }}
 jobs:
   test:
     runs-on: ubuntu-latest
