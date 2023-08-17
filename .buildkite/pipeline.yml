@@ -1,4 +1,4 @@
 steps:
   - label: ":hammer: Build"
-    command: scripts\build.bat
+    command: "npm install && npm test"
     key: build
