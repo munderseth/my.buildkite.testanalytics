@@ -2,3 +2,7 @@ steps:
   - label: ":hammer: Build"
     command: "npm install && npm test"
     key: build
+
+  - label: ":smile: Waiting"
+    command: echo "Waiting still"
+    depends_on: build
