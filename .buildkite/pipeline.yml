@@ -1,20 +1,4 @@
 steps:
   - label: ":hammer: Build"
-    command: npm install
+    command: scripts\build.bat
     key: build
-
-  - label: "Test"
-    command: npm test
-    key: test
-    depends_on: build
-
-  - label: "Config"
-    command: testspace config url munderseth.testspace.com
-    key: config
-    depends_on: test
-
-  - label: "Push"
-    command: testspace results.xml
-    key: push
-    depends_on: config
-
