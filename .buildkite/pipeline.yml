@@ -1,6 +1,20 @@
 steps:
-  - label: "🔨 Install"
-    commands:
-      - echo "Installing packages"
-      - npm install
-    key: "install"
+  - label: ":hammer: Build"
+    command: npm install
+    key: build
+
+  - label: "Test"
+    command: npm test
+    key: test
+    depends_on: build
+
+  - label: "Config"
+    command: testspace config url munderseth.testspace.com
+    key: config
+    depends_on: test
+
+  - label: "Push"
+    command: testspace results.xml
+    key: push
+    depends_on: config
+
