@@ -18,9 +18,8 @@
     "jest-junit": "^16.0.0"
   },
   "jest-junit": {
-    "suiteNameTemplate": "{filepath}",
-    "classNameTemplate": "{classname}",
-    "titleTemplate": "{title}",
-    "includeShortConsoleOutput": "true"
+    "addFileAttribute": "true",
+    "includeShortConsoleOutput": "true",
+    "reportTestSuiteErrors": "true"
   }
 }

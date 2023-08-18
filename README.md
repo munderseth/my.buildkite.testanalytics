@@ -26,10 +26,9 @@ Jest junit output - https://help.testspace.com/publish/tools-support-javascript#
 `.package.json`:
 ```
 "jest-junit": {
-    "suiteNameTemplate": "{filepath}",
-    "classNameTemplate": "{classname}",
-    "titleTemplate": "{title}",
-    "includeShortConsoleOutput": "true"
+    "addFileAttribute": "true",
+    "includeShortConsoleOutput": "true",
+    "reportTestSuiteErrors": "true"
 },
 ```
 
