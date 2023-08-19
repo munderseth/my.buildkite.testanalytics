@@ -78,8 +78,8 @@ c:\buildkite-agent
 
 The **Agent** token, found on *Agents/settings* is required to be added to the *c:\buildkite-agent\buildkite-agent.cfg*.
 
-### Testspace
-Testspace requires the **TESTSPACE_TOKEN** environment variable to be set. This requires adding a batch file:
+### Secrets
+Using [hooks](https://buildkite.com/docs/agent/v3/hooks) to set the **BUILDKITE_ANALYTICS_TOKEN** for different pipelines. For this sandbox environment using a batch file with conditional logic to support multiple Test Analytic [SUITES](https://buildkite.com/docs/test-analytics/test-suites):
 
 ```
 c:\buildkite-agent\hooks\environment.bat
@@ -89,11 +89,14 @@ Content example:
 ```
 @ECHO OFF
 ECHO "--- :house_with_garden: Setting up the environment"
-SET TESTSPACE_TOKEN=45a1dedb94e...3884
-SET BUILDKITE_ANALYTICS_TOKEN=ehRsn...PRv2Dz
+if "%BUILDKITE_PIPELINE_SLUG%" == "sandbox" (
+  SET BUILDKITE_ANALYTICS_TOKEN=ehRsn...2Dz
+) else (
+  SET BUILDKITE_ANALYTICS_TOKEN=Kp4h...We6
+)
 ```
 
-Note, the Test Analytics Suite also requires its token added. Not clear how to handle multiple Suites?
+Note, Testspace requires the **TESTSPACE_TOKEN** environment variable to be set.
 
 ### Running
 Using the command shell:
