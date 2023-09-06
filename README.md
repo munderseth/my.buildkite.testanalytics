@@ -103,5 +103,5 @@ Using the command shell:
 
 ```
 cd c:\buildkite-agent
-build-agent start
+buildkite-agent.exe start
 ```
