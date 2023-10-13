@@ -7,6 +7,7 @@ steps:
     command: |
       call npm install
       call npm test
+      testspace config url munderseth.testspace.com
       testspace junit.xml{tests}
     key: "build"
     depends_on: "setup"
