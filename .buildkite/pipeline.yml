@@ -1,8 +1,8 @@
 steps:
   - label: ":hammer: Build"
     commands:
-      - npm install
-      - npm test
+      - call npm install
+      - call npm test
       - |
         testspace config url munderseth.testspace.com
         testspace junit.xml{tests}
