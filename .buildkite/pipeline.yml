@@ -1,8 +1,4 @@
 steps:
-  - label: "Testspace setup"
-    command: |
-      testspace config url munderseth.testspace.com
-    key: "setup"
   - label: ":hammer: Build"
     command: |
       call npm install
@@ -10,6 +6,5 @@ steps:
       testspace config url munderseth.testspace.com
       testspace junit.xml{tests}
     key: "build"
-    depends_on: "setup"
 
 
